@@ -148,3 +148,64 @@ window.onload=function(){
   }
 
 }
+
+function loadTodayCheckouts(){
+
+  fetch("/OceanResort/getTodayCheckouts")
+
+      .then(res=>res.json())
+
+      .then(data=>{
+
+        const container=document.getElementById("checkoutList");
+
+        container.innerHTML="";
+
+        if(data.length===0){
+
+          container.innerHTML="<p>No checkouts today</p>";
+          return;
+
+        }
+
+        data.forEach(r=>{
+
+          const row=document.createElement("div");
+
+          row.className="checkout-row";
+
+          row.innerHTML=`
+<span class="material-symbols-outlined checkout-icon">meeting_room</span>
+
+<div class="checkout-info">
+<h4>${r.name}</h4>
+<p>Reservation ID: ${r.reservationId} • Room ${r.roomType}</p>
+</div>
+
+<span class="checkout-time">${formatTime(r.checkOut)}</span>
+`;
+
+          container.appendChild(row);
+
+        });
+
+      })
+
+      .catch(err=>console.log(err));
+
+}
+
+
+function formatTime(dateString){
+
+  const date=new Date(dateString);
+
+  return date.toLocaleTimeString([],{
+    hour:"2-digit",
+    minute:"2-digit"
+  });
+
+}
+
+
+window.addEventListener("DOMContentLoaded",loadTodayCheckouts);
