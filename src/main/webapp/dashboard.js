@@ -209,3 +209,39 @@ function formatTime(dateString){
 
 
 window.addEventListener("DOMContentLoaded",loadTodayCheckouts);
+
+function loadRoomRates(){
+
+  fetch("/OceanResort/getRoomRates")
+
+      .then(res => res.json())
+
+      .then(data => {
+
+        const container = document.getElementById("roomRates");
+
+        container.innerHTML = "";
+
+        data.forEach(room => {
+
+          const card = document.createElement("div");
+
+          card.className = "room-card";
+
+          card.innerHTML = `
+<h4>${room.roomType} Room</h4>
+<p class="price">LKR ${room.price}</p>
+<p class="capacity">👥 ${room.capacity} Guests</p>
+`;
+
+          container.appendChild(card);
+
+        });
+
+      })
+
+      .catch(err => console.log(err));
+
+}
+
+window.addEventListener("DOMContentLoaded", loadRoomRates);
