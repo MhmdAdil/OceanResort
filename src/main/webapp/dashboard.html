@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+
+    <!-- Roboto Font FIRST -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+
+
+</head>
+<body>
+
+    <!-- Top Bar -->
+
+
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Side Menu -->
+        <div class="sidebar">
+            <h1 class="logo">Ocean Resort</h1>
+
+            <ul class="menu">
+                <li onclick="navigate('home')">
+                    <span class="material-symbols-outlined menu-icon">dashboard</span>
+                    <span>Home</span>
+                </li>
+
+                <li onclick="navigate('add')">
+                    <span class="material-symbols-outlined menu-icon">event_note</span>
+                    <span>Reservation Details</span>
+                </li>
+
+                <li onclick="navigate('rooms')">
+                    <span class="material-symbols-outlined menu-icon">hotel</span>
+                    <span>Room Details</span>
+                </li>
+
+                <li onclick="navigate('guests')">
+                    <span class="material-symbols-outlined menu-icon">group</span>
+                    <span>Guest Details</span>
+                </li>
+
+                <li onclick="navigate('help')">
+                    <span class="material-symbols-outlined menu-icon">help</span>
+                    <span>Help</span>
+                </li>
+
+                <li class="logout" onclick="logout()">
+                    <span class="material-symbols-outlined menu-icon">logout</span>
+                    <span>Log Out</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+
+            <div class="top-bar">
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <span class="material-symbols-outlined search-icon">
+                        search
+                    </span>
+                    <input type="text" id="search" placeholder="Search reservations">
+                </div>
+
+                <div class="top-bar-right">
+                    <div class="staff-profile-covering">
+                        <img id="staffImage" src="pickup6.jpg" width="500px" height="300px" alt="Staff Image"
+                             style="cursor:pointer;">
+                        <h3>Ali khan</h3>
+                    </div>
+                    <div class="icon-container">
+                        <span class="material-symbols-outlined icon">
+                            notifications
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="button-sec">
+                <h1>Dashboard</h1>
+
+                <button class="add-btn" onclick="navigate('add')">
+                    <span class="material-symbols-outlined add-icon">
+                        add
+                    </span>
+                    Add Reservation
+                </button>
+            </div>
+            <!-- Reservation Details -->
+            <div class="card">
+                <h3>Today's Checkout Reservations</h3>
+
+                <div class="checkout-list">
+
+                    <div class="checkout-row">
+                        <span class="material-symbols-outlined checkout-icon">meeting_room</span>
+
+                        <div class="checkout-info">
+                            <h4>Ali</h4>
+                            <p>Reservation ID: R001 • Room 101</p>
+                        </div>
+
+                        <span class="checkout-time">11:00 AM</span>
+                    </div>
+
+                    <div class="checkout-row">
+                        <span class="material-symbols-outlined checkout-icon">meeting_room</span>
+
+                        <div class="checkout-info">
+                            <h4>Sara</h4>
+                            <p>Reservation ID: R002 • Room 203</p>
+                        </div>
+
+                        <span class="checkout-time">12:00 PM</span>
+                    </div>
+                    <div class="checkout-row">
+                        <span class="material-symbols-outlined checkout-icon">meeting_room</span>
+
+                        <div class="checkout-info">
+                            <h4>Sarajith</h4>
+                            <p>Reservation ID: R002 • Room 203</p>
+                        </div>
+
+                        <span class="checkout-time">12:00 PM</span>
+                    </div>
+
+
+                    <div class="checkout-row">
+                        <span class="material-symbols-outlined checkout-icon">meeting_room</span>
+
+                        <div class="checkout-info">
+                            <h4>Sarajith</h4>
+                            <p>Reservation ID: R002 • Room 203</p>
+                        </div>
+
+                        <span class="checkout-time">12:00 PM</span>
+                    </div>
+
+                    <div class="checkout-row">
+                        <span class="material-symbols-outlined checkout-icon">meeting_room</span>
+
+                        <div class="checkout-info">
+                            <h4>Sarajith</h4>
+                            <p>Reservation ID: R002 • Room 203</p>
+                        </div>
+
+                        <span class="checkout-time">12:00 PM</span>
+                    </div>
+
+                    <div class="checkout-row">
+                        <span class="material-symbols-outlined checkout-icon">meeting_room</span>
+
+                        <div class="checkout-info">
+                            <h4>Sarajith</h4>
+                            <p>Reservation ID: R002 • Room 203</p>
+                        </div>
+
+                        <span class="checkout-time">12:00 PM</span>
+                    </div>
+
+                    <div class="checkout-row">
+                        <span class="material-symbols-outlined checkout-icon">meeting_room</span>
+
+                        <div class="checkout-info">
+                            <h4>Sarajith</h4>
+                            <p>Reservation ID: R002 • Room 203</p>
+                        </div>
+
+                        <span class="checkout-time">12:00 PM</span>
+                    </div>
+
+                    <div class="checkout-row">
+                        <span class="material-symbols-outlined checkout-icon">meeting_room</span>
+
+                        <div class="checkout-info">
+                            <h4>John</h4>
+                            <p>Reservation ID: R003 • Room 305</p>
+                        </div>
+
+                        <span class="checkout-time">01:00 PM</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Today's Room Rates</h3>
+
+                <div class="room-grid">
+
+                    <div class="room-card">
+                        <h4>Single Room</h4>
+                        <p class="price">LKR 8,000</p>
+                        <p class="capacity">👤 1 Guest</p>
+                    </div>
+
+                    <div class="room-card">
+                        <h4>Double Room</h4>
+                        <p class="price">LKR 12,000</p>
+                        <p class="capacity">👥 2–3 Guests</p>
+                    </div>
+
+                    <div class="room-card">
+                        <h4>Suite Room</h4>
+                        <p class="price">LKR 20,000</p>
+                        <p class="capacity">👨‍👩‍👧 3–4 Guests</p>
+                    </div>
+
+                    <div class="room-card premium">
+                        <h4>Deluxe Room</h4>
+                        <p class="price">LKR 25,000</p>
+                        <p class="capacity">👨‍👩‍👧‍👦 4–6 Guests</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Staff Profile Popup Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeProfile">&times;</span>
+            <div class="profile-card-modern">
+                <div class="profile-left">
+                    <div class="profile-picture-section">
+                        <img id="profilePopupImage" src="images/default-user.png" alt="Profile Picture">
+                        <input type="file" id="profileUpload" accept="image/*">
+                        <label for="profileUpload" class="upload-btn">
+                            <span class="material-symbols-outlined">upload</span> Change Picture
+                        </label>
+                    </div>
+                </div>
+                <div class="profile-right">
+                    <h1 id="staffHeading"></h1>
+                    <p class="subtitle">Manage your profile information</p>
+                    <form class="staff-info">
+                        <div class="info-group">
+                            <label>Staff ID</label>
+                            <input type="text" id="staffId" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Name</label>
+                            <input type="text" id="staffName" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Address</label>
+                            <input type="text" id="staffAddress" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Email</label>
+                            <input type="email" id="staffEmail" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Phone Number</label>
+                            <input type="text" id="staffPhone" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Staff Type</label>
+                            <input type="text" id="staffType" readonly>
+                        </div>
+                        <div class="info-group">
+                            <label>Age</label>
+                            <input type="number" id="staffAge" readonly>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
