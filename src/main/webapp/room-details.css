@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  padding: 30px;
+}
+
+.page-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  color: #1f2a36;
+}
+.button-wrapper {
+  width: 380px;
+  display: flex;
+  justify-content: space-between;
+}
+.subtitle {
+  color: #666;
+  font-size: 14px;
+}
+
+.add-room-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #023e8a;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-room-btn:hover {
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+/* Grid */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Room Card */
+.room-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.room-id {
+  font-weight: bold;
+  color: #555;
+}
+
+.room-card h3 {
+  margin-bottom: 12px;
+  color: #1f2a36;
+}
+
+/* Info */
+.room-info p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.room-info span {
+  font-size: 18px;
+}
+
+/* Status */
+.status {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.available {
+  background: #d4f4dd;
+  color: #1c7c3d;
+}
+
+.status.occupied {
+  background: #ffe1e1;
+  color: #c0392b;
+}
+
+.status.maintenance {
+  background: #fff0c2;
+  color: #b7950b;
+}
+
+/* Button */
+.edit-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #e0e0e0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.edit-btn:hover {
+  background: #d0d0d0;
+}

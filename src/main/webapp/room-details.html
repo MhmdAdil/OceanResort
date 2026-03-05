@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Room Details | Ocean Resort</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="room-details.css">
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="page-header">
+        <div>
+            <h1>Room Details</h1>
+            <p class="subtitle">Manage all hotel rooms</p>
+        </div>
+
+        <div class="button-wrapper">
+
+            <button class="add-room-btn" onclick="navigateToAddRoom()">
+                <span class="material-symbols-outlined">add</span>
+                Add New Room
+            </button>
+
+            <button class="add-room-btn" onclick="navigateToAddRoomType()">
+                <span class="material-symbols-outlined">add</span>
+                Add New Room Type
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Room Grid -->
+    <div class="room-grid" id="roomGrid">
+
+        <!-- Room cards will load here -->
+
+    </div>
+
+</div>
+
+<script src="room-details.js"></script>
+<script src="add-room-type.js"></script>
+
+</body>
+</html>
