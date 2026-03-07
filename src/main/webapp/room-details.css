@@ -27,7 +27,7 @@ body {
   color: #1f2a36;
 }
 .button-wrapper {
-  width: 380px;
+  width: max-content;
   display: flex;
   justify-content: space-between;
 }
@@ -38,6 +38,7 @@ body {
 
 .add-room-btn {
   display: flex;
+  width: max-content;
   align-items: center;
   gap: 6px;
   background: #023e8a;
@@ -47,6 +48,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
   font-size: 14px;
+  margin-right:10px ;
 }
 
 .add-room-btn:hover {

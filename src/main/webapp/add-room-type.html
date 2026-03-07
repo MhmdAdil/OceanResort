@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Room Type | Ocean Resort</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="add-room-type.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Side Menu -->
+        <div class="sidebar">
+            <h1 class="logo">Ocean Resort</h1>
+
+            <ul class="menu">
+                <li onclick="navigate('home')">
+                    <span class="material-symbols-outlined menu-icon">dashboard</span>
+                    <span>Home</span>
+                </li>
+                <li onclick="navigate('register')">
+                    <span class="material-symbols-outlined menu-icon">group</span>
+                    <span>Register a Staff</span>
+                </li>
+
+                <li onclick="navigate('rooms')">
+                    <span class="material-symbols-outlined menu-icon">hotel</span>
+                    <span>Room Details</span>
+                </li>
+
+                <li onclick="navigate('help')">
+                    <span class="material-symbols-outlined menu-icon">help</span>
+                    <span>Help</span>
+                </li>
+
+                <li class="logout" onclick="logout()">
+                    <span class="material-symbols-outlined menu-icon">logout</span>
+                    <span>Log Out</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========== CONTENT ========== -->
+        <main class="content">
+
+
+
+            <!-- Page Header -->
+            <div class="button-sec">
+                <h1>Add Room Type</h1>
+
+            </div>
+
+            <!-- Add Room Type Card -->
+            <div class="room-type-wrapper">
+                <div class="room-type-card">
+
+                    <h2>Information</h2>
+                    <p class="subtitle">Define new room categories for the hotel</p>
+
+                    <form id="roomTypeForm">
+
+                        <div class="form-grid">
+
+                            <div class="input-group">
+                                <label>Room Type ID</label>
+                                <input type="text" id="roomTypeId" readonly>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Room Type Name</label>
+                                <input type="text" id="name" placeholder="Deluxe Sea View" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Price per Night (LKR)</label>
+                                <input type="number" id="price" placeholder="25000" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Maximum Guests</label>
+                                <input type="number" id="maxGuests" min="1" required>
+                            </div>
+
+                            <div class="input-group full">
+                                <label>Description / Facilities</label>
+                                <textarea id="description" placeholder="AC, WiFi, TV, Balcony"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="button-group">
+                            <button type="submit" class="save-btn">
+                                <span class="material-symbols-outlined">save</span>
+                                Save Room Type
+                            </button>
+
+                            <button type="reset" class="clear-btn">
+                                <span class="material-symbols-outlined">refresh</span>
+                                Clear
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="add-room-type.js"></script>
+    <script src="navigation.js"></script>
+</body>
+</html>

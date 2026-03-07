@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications | Ocean Resort</title>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="notifications.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ============ SIDEBAR ============ -->
+        <aside class="sidebar">
+            <h2>Ocean Resort</h2>
+
+            <ul>
+                <li onclick="navigate('dashboard')">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </li>
+
+                <li onclick="navigate('reservations')">
+                    <span class="material-symbols-outlined">event</span>
+                    Reservations
+                </li>
+
+                <li onclick="navigate('rooms')">
+                    <span class="material-symbols-outlined">hotel</span>
+                    Rooms
+                </li>
+
+                <li onclick="navigate('guests')">
+                    <span class="material-symbols-outlined">groups</span>
+                    Guests
+                </li>
+
+                <li class="active">
+                    <span class="material-symbols-outlined">notifications</span>
+                    Notifications
+                </li>
+
+                <li onclick="logout()">
+                    <span class="material-symbols-outlined">logout</span>
+                    Exit
+                </li>
+            </ul>
+        </aside>
+
+        <!-- ============ CONTENT ============ -->
+        <main class="content">
+            <h1>Notifications</h1>
+            <p class="subtitle">Reservation reminders & system alerts</p>
+
+            <div id="notificationList" class="notification-list">
+                <!-- Notifications inserted by JS -->
+            </div>
+        </main>
+
+    </div>
+
+    <script src="notifications.js"></script>
+</body>
+</html>

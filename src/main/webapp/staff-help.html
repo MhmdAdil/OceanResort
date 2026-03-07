@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help | Ocean Resort</title>
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="help.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Side Menu -->
+    <div class="sidebar">
+        <h1 class="logo">Ocean Resort</h1>
+
+        <ul class="menu">
+            <li onclick="navigateStaff('dashboard')">
+                <span class="material-symbols-outlined menu-icon">dashboard</span>
+                <span>Home</span>
+            </li>
+
+            <li onclick="navigateStaff('reservation')">
+                <span class="material-symbols-outlined menu-icon">hotel</span>
+                <span>Reservation Details</span>
+            </li>
+
+            <li onclick="navigateStaff('guest')">
+                <span class="material-symbols-outlined menu-icon">group</span>
+                <span>Guest Details</span>
+            </li>
+
+
+            <li onclick="navigateStaff('payment')">
+                <span class="material-symbols-outlined menu-icon">group</span>
+                <span>Payments</span>
+            </li>
+
+            <li onclick="navigateStaff('staffHelp')">
+                <span class="material-symbols-outlined menu-icon">help</span>
+                <span>Help</span>
+            </li>
+
+            <li class="logout" onclick="logout()">
+                <span class="material-symbols-outlined menu-icon">logout</span>
+                <span>Log Out</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ================= CONTENT ================= -->
+    <main class="content">
+
+        <h1>Staff Help & Support</h1>
+        <p class="subtitle">Find answers to common questions and system usage</p>
+
+        <!-- FAQ Section -->
+        <div class="help-grid">
+
+            <div class="help-card">
+                <span class="material-symbols-outlined icon">login</span>
+                <h3>Login Issues</h3>
+                <p>
+                    Make sure your username and password are correct.
+                    If you forgot your password, contact the system administrator.
+                </p>
+            </div>
+
+            <div class="help-card">
+                <span class="material-symbols-outlined icon">event</span>
+                <h3>Reservation Management</h3>
+                <p>
+                    You can add, edit, or delete reservations from the Reservation Details page.
+                    Ensure room availability before saving.
+                </p>
+            </div>
+
+            <div class="help-card">
+                <span class="material-symbols-outlined icon">groups</span>
+                <h3>Guest Management</h3>
+                <p>
+                    Manage guest profiles and view current reservations associated with each guest.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-box">
+            <h3>Need More Help?</h3>
+            <p>
+                Contact the system administrator or IT support team.
+            </p>
+
+            <p>
+                📧 Email: <strong>support@oceanresort.lk</strong><br>
+                ☎ Phone: <strong>+94 77 123 4567</strong>
+            </p>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="help.js"></script>
+<script src="staff-navigation.js"></script>
+</body>
+</html>

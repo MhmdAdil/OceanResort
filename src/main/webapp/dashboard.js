@@ -245,3 +245,156 @@ function loadRoomRates(){
 }
 
 window.addEventListener("DOMContentLoaded", loadRoomRates);
+
+
+/* ===============================
+   SEARCH RESERVATIONS
+================================ */
+function searchReservations() {
+
+    const value = document.getElementById("search").value.toLowerCase();
+
+    const rows = document.querySelectorAll(".checkout-row");
+
+    rows.forEach(row => {
+
+        const name = row.getAttribute("data-name") || "";
+        const id = row.getAttribute("data-id") || "";
+
+        if (name.includes(value) || id.includes(value)) {
+
+            row.style.display = "flex";
+
+        } else {
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+}
+
+/* ===============================
+   SEARCH RESERVATIONS
+================================ */
+function searchReservations() {
+
+    const value = document.getElementById("search").value.toLowerCase();
+
+    const rows = document.querySelectorAll(".checkout-row");
+
+    rows.forEach(row => {
+
+        const name = row.getAttribute("data-name") || "";
+        const id = row.getAttribute("data-id") || "";
+
+        if (name.includes(value) || id.includes(value)) {
+
+            row.style.display = "flex";
+
+        } else {
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* ===============================
+   LOAD TODAY RESERVATIONS
+================================ */
+function loadTodayCheckoutReservations() {
+
+    fetch("/OceanResort/getTodayCheckouts")
+
+        .then(res => res.json())
+
+        .then(data => {
+
+            const container = document.getElementById("checkoutList");
+
+            container.innerHTML = "";
+
+            data.forEach(r => {
+
+                const row = document.createElement("div");
+
+                row.className = "checkout-row";
+
+                const name = r.name ? r.name.toLowerCase() : "";
+                const id = r.reservationId ? r.reservationId.toLowerCase() : "";
+
+                row.setAttribute("data-name", name);
+                row.setAttribute("data-id", id);
+
+                const time = new Date(r.checkOut).toLocaleTimeString([], {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+
+                row.innerHTML = `
+                    <span class="material-symbols-outlined checkout-icon">meeting_room</span>
+
+                    <div class="checkout-info">
+                        <h4>${r.name}</h4>
+                        <p>Reservation ID: ${r.reservationId} • Room ${r.roomType}</p>
+                    </div>
+
+                    <span class="checkout-time">${time}</span>
+                `;
+
+                container.appendChild(row);
+
+            });
+
+        })
+
+        .catch(error => console.log(error));
+
+}
+
+
+function navigate(page){
+
+    if(page === "home"){
+        window.location.href = "dashboard.html";
+    }
+
+    else if(page === "register"){
+        window.location.href = "register.html";
+    }
+
+    else if(page === "rooms"){
+        window.location.href = "room-details.html";
+    }
+
+    else if(page === "help"){
+        window.location.href = "help.html";
+    }
+
+}
+
+
+function navigateStaff(page){
+
+    const routes = {
+
+        dashboard: "dashboard.html",
+        reservation: "reservation-details.html",
+        guest: "guest-details.html",
+        payment: "billing.html",
+        staffHelp: "help.html",
+
+        res: "add-reservation.html"
+
+    };
+
+    if(routes[page]){
+        window.location.href = routes[page];
+    }
+
+}

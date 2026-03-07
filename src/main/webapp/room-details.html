@@ -31,20 +31,104 @@
                 Add New Room Type
             </button>
 
+            <button class="add-room-btn" onclick="openEditRoomPage()">
+                <span class="material-symbols-outlined">edit</span>
+                Edit Room
+            </button>
+
         </div>
     </div>
 
     <!-- Room Grid -->
     <div class="room-grid" id="roomGrid">
 
-        <!-- Room cards will load here -->
+        <!-- Rooms will load here -->
 
     </div>
 
 </div>
 
-<script src="room-details.js"></script>
-<script src="add-room-type.js"></script>
+<script>
 
+    document.addEventListener("DOMContentLoaded", loadRooms);
+
+    function loadRooms(){
+
+        fetch("/OceanResort/getRooms")
+
+            .then(response => {
+
+                if(!response.ok){
+                    throw new Error("Server error");
+                }
+
+                return response.json();
+
+            })
+
+            .then(data => {
+
+                const grid = document.getElementById("roomGrid");
+
+                grid.innerHTML = "";
+
+                data.forEach(room => {
+
+                    let statusClass = "available";
+
+                    if(room.status === "Occupied") statusClass = "occupied";
+                    if(room.status === "Maintenance") statusClass = "maintenance";
+
+                    const card = document.createElement("div");
+
+                    card.className = "room-card";
+
+                    card.innerHTML = `
+
+<div class="room-header">
+<span class="room-id">${room.room_code}</span>
+<span class="status ${statusClass}">${room.status}</span>
+</div>
+
+<h3>${room.room_type}</h3>
+
+<div class="room-info">
+<p><span class="material-symbols-outlined">group</span> Capacity: ${room.capacity}</p>
+<p><span class="material-symbols-outlined">payments</span> LKR ${room.price}</p>
+</div>
+
+`;
+
+                    grid.appendChild(card);
+
+                });
+
+            })
+
+            .catch(error => {
+
+                console.error("Error loading rooms:", error);
+
+            });
+
+    }
+
+    function openEditRoomPage(){
+
+        window.location.href = "edit-room.html";
+
+    }
+
+    function navigateToAddRoom(){
+
+        window.location.href = "add-room.html";
+
+    }
+    function navigateToAddRoomType(){
+
+        window.location.href = "add-room-type.html";
+
+    }
+</script>
 </body>
 </html>

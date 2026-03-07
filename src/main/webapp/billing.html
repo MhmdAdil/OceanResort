@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation Billing</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="billing.css">
+
+</head>
+
+<body>
+
+<div class="billing-wrapper">
+
+    <div class="billing-card">
+
+        <h1>Reservation Billing</h1>
+        <p class="subtitle">Generate guest invoice</p>
+
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label>Reservation ID</label>
+                <select id="reservationId"></select>
+            </div>
+
+            <div class="input-group">
+                <label>Guest Name</label>
+                <input type="text" id="guestName" readonly>
+            </div>
+
+            <div class="input-group">
+                <label>Room Type</label>
+                <input type="text" id="roomType" readonly>
+            </div>
+
+            <div class="input-group">
+                <label>Price per Night (LKR)</label>
+                <input type="text" id="price" readonly>
+            </div>
+
+            <div class="input-group">
+                <label>Check-in</label>
+                <input type="text" id="checkIn" readonly>
+            </div>
+
+            <div class="input-group">
+                <label>Check-out</label>
+                <input type="text" id="checkOut" readonly>
+            </div>
+
+            <div class="input-group">
+                <label>Total Nights</label>
+                <input type="text" id="nights" readonly>
+            </div>
+
+            <div class="input-group">
+                <label>Total Amount (LKR)</label>
+                <input type="text" id="total" readonly>
+            </div>
+
+        </div>
+
+        <div class="button-wraping">
+        <div class="button-group">
+
+            <button onclick="generateBill()" class="bill-btn">
+                <span class="material-symbols-outlined">receipt</span>
+                Checking Out
+            </button>
+
+        </div>
+
+        <div class="button-group">
+
+            <button onclick="printBill()" class="bill-btn">
+                <span class="material-symbols-outlined">receipt</span>
+                Print Bill
+            </button>
+
+        </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Invoice Popup -->
+<div id="invoicePopup" class="invoice-popup">
+
+    <div class="invoice-box">
+
+        <h2>Invoice</h2>
+
+        <div class="invoice-info">
+
+            <p><strong>Invoice Date:</strong> <span id="invDate"></span></p>
+            <p><strong>Invoice Number:</strong> <span id="invNumber"></span></p>
+            <p><strong>Client Name:</strong> <span id="invGuest"></span></p>
+
+        </div>
+
+        <table class="invoice-table">
+
+            <thead>
+            <tr>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Amount</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr>
+                <td id="invRoom"></td>
+                <td id="invNights"></td>
+                <td id="invPrice"></td>
+                <td id="invAmount"></td>
+            </tr>
+
+            <tr>
+                <td colspan="3">Subtotal</td>
+                <td id="invSubtotal"></td>
+            </tr>
+
+
+
+            <tr class="total">
+                <td colspan="3">Total Amount Due</td>
+                <td id="invTotal"></td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+        <div class="invoice-buttons">
+            <button onclick="window.print()">Print</button>
+            <button onclick="closeInvoice()">Close</button>
+        </div>
+
+    </div>
+</div>
+<script src="billing.js"></script>
+
+</body>
+</html>

@@ -9,52 +9,48 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="help.css">
+    <link rel="stylesheet" href="dashboard.css">
+
 </head>
 <body>
 
     <div class="container">
 
-        <!-- ================= SIDEBAR ================= -->
-        <aside class="sidebar">
-            <h2>Ocean Resort</h2>
+        <!-- Side Menu -->
+        <div class="sidebar">
+            <h1 class="logo">Ocean Resort</h1>
 
-            <ul>
-                <li onclick="navigate('dashboard')">
-                    <span class="material-symbols-outlined">dashboard</span>
-                    Dashboard
+            <ul class="menu">
+                <li onclick="navigate('home')">
+                    <span class="material-symbols-outlined menu-icon">dashboard</span>
+                    <span>Home</span>
                 </li>
-
-                <li onclick="navigate('reservations')">
-                    <span class="material-symbols-outlined">event</span>
-                    Reservation Details
+                <li onclick="navigate('register')">
+                    <span class="material-symbols-outlined menu-icon">group</span>
+                    <span>Register a Staff</span>
                 </li>
 
                 <li onclick="navigate('rooms')">
-                    <span class="material-symbols-outlined">hotel</span>
-                    Room Details
+                    <span class="material-symbols-outlined menu-icon">hotel</span>
+                    <span>Room Details</span>
                 </li>
 
-                <li onclick="navigate('guests')">
-                    <span class="material-symbols-outlined">groups</span>
-                    Guest Details
+                <li onclick="navigate('help')">
+                    <span class="material-symbols-outlined menu-icon">help</span>
+                    <span>Help</span>
                 </li>
 
-                <li class="active">
-                    <span class="material-symbols-outlined">help</span>
-                    Help
-                </li>
-
-                <li onclick="logout()">
-                    <span class="material-symbols-outlined">logout</span>
-                    Exit
+                <li class="logout" onclick="logout()">
+                    <span class="material-symbols-outlined menu-icon">logout</span>
+                    <span>Log Out</span>
                 </li>
             </ul>
-        </aside>
+        </div>
 
         <!-- ================= CONTENT ================= -->
         <main class="content">
 
-            <h1>Help & Support</h1>
+            <h1>Admin Help & Support</h1>
             <p class="subtitle">Find answers to common questions and system usage</p>
 
             <!-- FAQ Section -->
@@ -87,13 +83,6 @@
                     </p>
                 </div>
 
-                <div class="help-card">
-                    <span class="material-symbols-outlined icon">groups</span>
-                    <h3>Guest Management</h3>
-                    <p>
-                        Manage guest profiles and view current reservations associated with each guest.
-                    </p>
-                </div>
 
             </div>
 
@@ -115,5 +104,6 @@
     </div>
 
     <script src="help.js"></script>
+    <script src="navigation.js"></script>
 </body>
 </html>

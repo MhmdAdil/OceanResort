@@ -1,0 +1,184 @@
+/* Page Background */
+
+body{
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg,#eef2f7,#d9e2ec);
+}
+
+/* Wrapper */
+
+.billing-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:40px;
+}
+
+/* Card */
+
+.billing-card{
+    width:850px;
+    background:white;
+    border-radius:14px;
+    padding:35px 40px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* Title */
+
+.billing-card h1{
+    margin:0;
+    font-size:28px;
+    color:#1f2937;
+}
+
+.subtitle{
+    margin-top:5px;
+    margin-bottom:25px;
+    color:#6b7280;
+}
+
+/* Grid Layout */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+/* Input Group */
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.input-group label{
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:6px;
+    color:#374151;
+}
+
+.input-group input,
+.input-group select{
+    padding:10px 12px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    font-size:14px;
+    transition:all .2s;
+}
+.button-wraping{
+    display:flex;
+    gap:12px;
+    align-items: center;
+    justify-content: end;
+}
+
+/* Focus effect */
+
+.input-group input:focus,
+.input-group select:focus{
+    border-color:#2563eb;
+    outline:none;
+    box-shadow:0 0 0 2px rgba(37,99,235,0.15);
+}
+
+/* Buttons */
+
+.button-group{
+    margin-top:30px;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.bill-btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    font-size:14px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.bill-btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-1px);
+    box-shadow:0 6px 12px rgba(0,0,0,0.15);
+}
+
+
+.invoice-popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.invoice-box{
+    background:white;
+    width:650px;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.invoice-box h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.invoice-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+.invoice-table th,
+.invoice-table td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:left;
+}
+
+.invoice-table th{
+    background:#f2f2f2;
+}
+
+.invoice-buttons{
+    margin-top:20px;
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+}
+
+.invoice-buttons button{
+    background:#2563eb;
+    border:none;
+    color:white;
+    padding:8px 16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.invoice-buttons button:hover{
+    background:#1d4ed8;
+}
+
+
+.total td{
+    font-weight:bold;
+}

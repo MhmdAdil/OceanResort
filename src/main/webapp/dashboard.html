@@ -17,61 +17,58 @@
 </head>
 <body>
 
-    <!-- Top Bar -->
+<!-- Top Bar -->
 
 
 
-    <!-- Main Container -->
-    <div class="container">
+<!-- Main Container -->
+<div class="container">
 
-        <!-- Side Menu -->
-        <div class="sidebar">
-            <h1 class="logo">Ocean Resort</h1>
+    <!-- Side Menu -->
+    <div class="sidebar">
+        <h1 class="logo">Ocean Resort</h1>
 
-            <ul class="menu">
-                <li onclick="navigate('home')">
-                    <span class="material-symbols-outlined menu-icon">dashboard</span>
-                    <span>Home</span>
-                </li>
+        <ul class="menu">
+            <li onclick="navigate('home')">
+                <span class="material-symbols-outlined menu-icon">dashboard</span>
+                <span>Home</span>
+            </li>
+            <li onclick="navigate('register')">
+                <span class="material-symbols-outlined menu-icon">group</span>
+                <span>Register a Staff</span>
+            </li>
 
-                <li onclick="navigate('add')">
-                    <span class="material-symbols-outlined menu-icon">event_note</span>
-                    <span>Reservation Details</span>
-                </li>
+            <li onclick="navigate('rooms')">
+                <span class="material-symbols-outlined menu-icon">hotel</span>
+                <span>Room Details</span>
+            </li>
 
-                <li onclick="navigate('rooms')">
-                    <span class="material-symbols-outlined menu-icon">hotel</span>
-                    <span>Room Details</span>
-                </li>
+            <li onclick="navigate('help')">
+                <span class="material-symbols-outlined menu-icon">help</span>
+                <span>Help</span>
+            </li>
 
-                <li onclick="navigate('guests')">
-                    <span class="material-symbols-outlined menu-icon">group</span>
-                    <span>Guest Details</span>
-                </li>
-
-                <li onclick="navigate('help')">
-                    <span class="material-symbols-outlined menu-icon">help</span>
-                    <span>Help</span>
-                </li>
-
-                <li class="logout" onclick="logout()">
-                    <span class="material-symbols-outlined menu-icon">logout</span>
-                    <span>Log Out</span>
-                </li>
-            </ul>
-        </div>
+            <li class="logout" onclick="logout()">
+                <span class="material-symbols-outlined menu-icon">logout</span>
+                <span>Log Out</span>
+            </li>
+        </ul>
+    </div>
 
         <!-- Content Area -->
         <div class="content">
 
             <div class="top-bar">
                 <!-- Search Bar -->
-                <div class="search-bar">
-                    <span class="material-symbols-outlined search-icon">
-                        search
-                    </span>
-                    <input type="text" id="search" placeholder="Search reservations">
-                </div>
+                <!-- Search Bar -->
+                <form id="searchForm">
+                    <div class="search-bar">
+                <span class="material-symbols-outlined search-icon">
+                    search
+                </span>
+                        <input type="text" id="search" placeholder="Search reservations">
+                    </div>
+                </form>
 
                 <div class="top-bar-right">
                     <div class="staff-profile-covering">
@@ -89,14 +86,9 @@
 
             </div>
             <div class="button-sec">
-                <h1>Dashboard</h1>
+                <h1>Admin Dashboard</h1>
 
-                <button class="add-btn" onclick="navigate('add')">
-                    <span class="material-symbols-outlined add-icon">
-                        add
-                    </span>
-                    Add Reservation
-                </button>
+
             </div>
             <!-- Reservation Details -->
             <div class="card">

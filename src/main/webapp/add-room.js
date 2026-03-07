@@ -1,36 +1,29 @@
-// Function to generate Guest ID
-function generateGuestId() {
-    const guestIdField = document.getElementById("guestId");
-
-    // Generate random 4 digit number
-    const newId = "G" + Math.floor(1000 + Math.random() * 9000);
-
-    guestIdField.value = newId;
+// Function to generate Room ID
+function generateRoomId() {
+    const roomIdField = document.getElementById("roomId");
+    const randomId = "RM" + Math.floor(100 + Math.random() * 900);
+    roomIdField.value = randomId;
 }
 
-// Generate ID when page loads
-document.addEventListener("DOMContentLoaded", function () {
-    generateGuestId();
+// Generate ID on page load
+document.addEventListener("DOMContentLoaded", () => {
+    generateRoomId();
 });
 
-// Handle form submit
-document.getElementById("reservationForm").addEventListener("submit", function (e) {
+// Form submit
+document.getElementById("addRoomForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const data = new URLSearchParams();
 
-    data.append("guestName", document.getElementById("guestName").value);
-    data.append("phone", document.getElementById("phone").value);
-    data.append("email", document.getElementById("email").value);
-    data.append("nic", document.getElementById("nic").value);
-    data.append("address", document.getElementById("address").value);
+    data.append("roomCode", document.getElementById("roomId").value);
     data.append("roomType", document.getElementById("roomType").value);
-    data.append("guestCount", document.getElementById("guestCount").value);
-    data.append("checkIn", document.getElementById("checkIn").value);
-    data.append("checkOut", document.getElementById("checkOut").value);
-    data.append("specialNote", document.getElementById("specialNote").value);
+    data.append("capacity", document.getElementById("capacity").value);
+    data.append("price", document.getElementById("price").value);
+    data.append("status", document.getElementById("status").value);
+    data.append("description", document.getElementById("description").value);
 
-    fetch("/OceanResort/addReservation", {
+    fetch("/OceanResort/addRoom", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -39,21 +32,13 @@ document.getElementById("reservationForm").addEventListener("submit", function (
     })
         .then(response => response.text())
         .then(result => {
-
             if (result === "success") {
-
-                alert("Reservation saved successfully!");
-
-                // Reset form
-                document.getElementById("reservationForm").reset();
-
-                // 🔥 Generate new Guest ID after reset
-                generateGuestId();
-            }
-            else if (result === "empty") {
+                alert("Room added successfully!");
+                document.getElementById("addRoomForm").reset();
+                generateRoomId(); // 🔥 Generate new ID after reset
+            } else if (result === "empty") {
                 alert("Please fill all required fields.");
-            }
-            else {
+            } else {
                 alert("Server error.");
             }
         })
@@ -100,8 +85,11 @@ function loadRoomTypes(){
                 dropdown.appendChild(option);
             });
         })
+
         .catch(error => {
 
             console.error("Error loading room types:", error);
+
         });
+
 }

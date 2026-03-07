@@ -1,0 +1,43 @@
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    height:100vh;
+}
+
+.logo{
+    margin-bottom:30px;
+}
+
+.logo h2{
+    margin:0;
+}
+
+.role{
+    font-size:12px;
+    opacity:.7;
+}
+
+.menu{
+    list-style:none;
+    padding:0;
+}
+
+.menu li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px;
+    cursor:pointer;
+    border-radius:6px;
+    transition:.2s;
+}
+
+.menu li:hover{
+    background:#1e293b;
+}
+
+.logout{
+    margin-top:20px;
+    color:#ef4444;
+}

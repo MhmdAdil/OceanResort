@@ -10,17 +10,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet("/getRooms")
-public class GetRoomsServlet extends HttpServlet {
+@WebServlet("/getRoomTypes")
+public class GetRoomTypesServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setContentType("application/json");
+
         PrintWriter out = response.getWriter();
 
         try(Connection con = DBConnection.getConnection()){
 
-            String sql = "SELECT * FROM rooms";
+            String sql = "SELECT name FROM room_types";
 
             PreparedStatement ps = con.prepareStatement(sql);
 
@@ -40,12 +41,9 @@ public class GetRoomsServlet extends HttpServlet {
 
                 json.append("{");
 
-                json.append("\"room_id\":").append(rs.getInt("room_id")).append(",");
-                json.append("\"room_code\":\"").append(rs.getString("room_code")).append("\",");
-                json.append("\"room_type\":\"").append(rs.getString("room_type")).append("\",");
-                json.append("\"capacity\":").append(rs.getInt("capacity")).append(",");
-                json.append("\"price\":").append(rs.getDouble("price")).append(",");
-                json.append("\"status\":\"").append(rs.getString("status")).append("\"");
+                json.append("\"name\":\"")
+                        .append(rs.getString("name"))
+                        .append("\"");
 
                 json.append("}");
 
@@ -58,12 +56,9 @@ public class GetRoomsServlet extends HttpServlet {
             out.print(json.toString());
 
         }
-
         catch(Exception e){
-
             e.printStackTrace();
-
         }
-    }
 
+    }
 }

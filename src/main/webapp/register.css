@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+/* Background */
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #023e8a, #182533);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+p,
+span,
+label,
+input {
+  font-weight: 300;
+}
+
+/* Wrapper */
+.register-wrapper {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px;
+}
+
+/* Card */
+.register-card {
+  background: white;
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+#role{
+  border: none;
+  background: none;
+  width: 100%;
+}
+/* Headings */
+.register-card h2 {
+  margin-bottom: 5px;
+  color: #1f2a36;
+}
+
+.subtitle {
+  margin-bottom: 25px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Inputs */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #f1f3f5;
+  margin-bottom: 15px;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.input-group span {
+  color: #555;
+  margin-right: 10px;
+}
+
+.input-group input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #023e8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 15px;
+}
+
+button:hover {
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
+/* Error */
+#error {
+  margin-top: 12px;
+  font-size: 13px;
+  color: red;
+}

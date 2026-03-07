@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation Details | Ocean Resort</title>
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="reservation-details.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="page-header">
+        <h1>Reservation Details</h1>
+        <p>View and manage all room reservations</p>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="filter-bar">
+
+        <div class="search-box">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" id="searchInput" placeholder="Search by guest name / room / reservation ID">
+        </div>
+
+        <select id="roomTypeFilter">
+            <option value="">All Room Types</option>
+            <option>Single</option>
+            <option>Double</option>
+            <option>Suite</option>
+            <option>Deluxe</option>
+        </select>
+
+    </div>
+    <div class="chekcout-but">
+
+        <button class="action-btn billing-btn" onclick="openBillingPage()">
+            <span class="material-symbols-outlined">receipt_long</span>
+            Billing
+        </button>
+
+        <button class="action-btn history-btn" onclick="openCheckoutHistory()">
+            <span class="material-symbols-outlined">history</span>
+            Checkout History
+        </button>
+
+    </div>
+
+    <!-- Reservation Table -->
+    <div class="reservation-card">
+
+        <table id="reservationTable">
+
+            <thead>
+            <tr>
+                <th>Reservation ID</th>
+                <th>Guest</th>
+                <th>Room Type</th>
+                <th>Guests</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+
+            <!-- DATA WILL LOAD HERE -->
+            <tbody id="reservationBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- ================= VIEW MODAL ================= -->
+<div id="viewModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Reservation Details</h2>
+            <span class="material-symbols-outlined close-btn" onclick="closeViewModal()">close</span>
+        </div>
+
+        <div class="modal-body">
+
+            <div class="detail">
+                <span>Reservation ID:</span>
+                <strong id="v_id"></strong>
+            </div>
+
+            <div class="detail">
+                <span>Guest Name:</span>
+                <strong id="v_name"></strong>
+            </div>
+
+            <div class="detail">
+                <span>Phone:</span>
+                <strong id="v_phone"></strong>
+            </div>
+
+            <div class="detail">
+                <span>Email:</span>
+                <strong id="v_email"></strong>
+            </div>
+
+            <div class="detail">
+                <span>Room Type:</span>
+                <strong id="v_room"></strong>
+            </div>
+
+            <div class="detail">
+                <span>Guests:</span>
+                <strong id="v_guests"></strong>
+            </div>
+
+            <div class="detail">
+                <span>Check-in:</span>
+                <strong id="v_checkin"></strong>
+            </div>
+
+            <div class="detail">
+                <span>Check-out:</span>
+                <strong id="v_checkout"></strong>
+            </div>
+
+            <div class="detail full">
+                <span>Special Note:</span>
+                <p id="v_note"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="reservation-details.js"></script>
+
+</body>
+</html>

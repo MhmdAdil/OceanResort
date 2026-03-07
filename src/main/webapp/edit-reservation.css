@@ -1,0 +1,156 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f4f4f4;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-weight: 400;
+  margin: 0;
+}
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+p,
+span,
+label {
+  font-weight: 300;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh; /* Full screen */
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+
+  overflow: hidden; /* prevent scroll */
+}
+
+.reservation-wrapper {
+  max-width: 1000px;
+  margin: auto;
+  height: calc(100vh - 40px); /* fit inside screen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reservation-card {
+  background: #fff;
+  padding: 22px; /* reduced from 30px */
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-height: 100%;
+}
+
+.reservation-card h2 {
+  color: #1f2a36;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin: 18px 0 10px;
+  color: #2c3e50;
+  border-left: 4px solid #1f2a36;
+  padding-left: 10px;
+}
+
+/* Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+/* Inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+textarea {
+  height: 60px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1f2a36;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 18px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.save-btn {
+  background: #023e8a;
+  color: white;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
+.clear-btn {
+  background: #ddd;
+  color: #ff1900;
+}
+
+.clear-btn:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}

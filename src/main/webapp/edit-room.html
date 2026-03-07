@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Room | Ocean Resort</title>
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="edit-room.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Side Menu -->
+        <div class="sidebar">
+            <h1 class="logo">Ocean Resort</h1>
+
+            <ul class="menu">
+                <li onclick="navigate('home')">
+                    <span class="material-symbols-outlined menu-icon">dashboard</span>
+                    <span>Home</span>
+                </li>
+                <li onclick="navigate('register')">
+                    <span class="material-symbols-outlined menu-icon">group</span>
+                    <span>Register a Staff</span>
+                </li>
+
+                <li onclick="navigate('rooms')">
+                    <span class="material-symbols-outlined menu-icon">hotel</span>
+                    <span>Room Details</span>
+                </li>
+
+                <li onclick="navigate('help')">
+                    <span class="material-symbols-outlined menu-icon">help</span>
+                    <span>Help</span>
+                </li>
+
+                <li class="logout" onclick="logout()">
+                    <span class="material-symbols-outlined menu-icon">logout</span>
+                    <span>Log Out</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ============ CONTENT ============ -->
+        <main class="content">
+
+            <div class="form-card">
+                <h1>Edit Room Details</h1>
+                <p class="subtitle">Update room information</p>
+
+                <form id="editRoomForm">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label>Room ID</label>
+                            <select id="roomId"></select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Room Number</label>
+                            <input type="text" id="roomNumber" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Room Type</label>
+                            <select id="roomType" required>
+                                <option value="">Select Room Type</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Price (LKR)</label>
+                            <input type="number" id="price" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Guest Capacity</label>
+                            <input type="number" id="capacity" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Status</label>
+                            <select id="status">
+                                <option value="Available">Available</option>
+                                <option value="Occupied">Occupied</option>
+                                <option value="Maintenance">Maintenance</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="save-btn">
+                            <span class="material-symbols-outlined">save</span>
+                            Update Room
+                        </button>
+
+                        <button type="button" class="cancel-btn" onclick="navigate('rooms')">
+                            <span class="material-symbols-outlined">close</span>
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="edit-room.js"></script>
+    <script src="navigation.js"></script>
+</body>
+</html>
