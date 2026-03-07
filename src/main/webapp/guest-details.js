@@ -67,3 +67,24 @@ function navigate(page) {
 function logout() {
   window.location.href = "login.html";
 }
+
+
+function deleteGuest(guestId) {
+
+    if (!confirm("Are you sure you want to delete this guest?")) return;
+
+    fetch("/OceanResort/deleteGuest?id=" + guestId)
+        .then(res => res.text())
+        .then(data => {
+
+            if (data === "success") {
+                alert("Guest deleted successfully");
+                loadGuests();
+            } else {
+                alert("Failed to delete guest");
+            }
+
+        })
+        .catch(err => console.error(err));
+
+}
