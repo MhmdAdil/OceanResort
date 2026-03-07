@@ -92,3 +92,29 @@ function openBillingPage(){
 function openCheckoutHistory(){
     window.location.href = "checkout-history.html";
 }
+
+document.addEventListener("DOMContentLoaded", loadRoomTypes);
+
+function loadRoomTypes() {
+
+    fetch("/OceanResort/getRoomTypes")
+        .then(res => res.json())
+        .then(data => {
+
+            const select = document.getElementById("roomTypeFilter");
+
+            data.forEach(room => {
+
+                const option = document.createElement("option");
+
+                option.value = room.name;
+                option.textContent = room.name;
+
+                select.appendChild(option);
+
+            });
+
+        })
+        .catch(err => console.error(err));
+
+}
